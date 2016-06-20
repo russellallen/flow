@@ -1,13 +1,26 @@
- '0.0.1'
+ '0.0.2'
  '
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
 '
-[ 
-"prefileIn" self] value
+["preFileIn" self] value
 
 
  '-- Module body'
+
+ bootstrap addSlotsTo: bootstrap stub -> 'defaultBehavior' -> () From: ( | {
+         'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         wrapFlow = ( |
+            | flow inject copyOnObject: self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'defaultBehavior' -> () From: ( | {
+         'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         |= f = ( |
+            | wrapFlow |= f).
+        } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> () From: ( | {
          'Category: libraries\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
@@ -16,6 +29,250 @@ See the legal/LICENSE file for license information and legal/AUTHORS for authors
              {} = 'ModuleInfo: Creator: globals flow.
 '.
             | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'Category: structural\x7fComment: Neither writes nor 
+reads will succeed\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         blocking = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow blocking.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         core = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits core.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            blk value: 'ATEND').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | 
+            blk value: 'ATEND').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         extract = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'extract' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow extract.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'Category: structural\x7fComment: /dev/null :)
+I emit nils and 
+eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         nil = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow nil.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow nil)'
+        
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         extract = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+        
+         wrapped.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         filter = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow filter.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         block.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copy)'
+        
+         buffer <- list copy.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         filter = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits filter.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'filter' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         gather = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow gather.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+        
+         block.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copy)'
+        
+         buffer <- list copy.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         gather = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits gather.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'gather' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         inject = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'inject' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow inject.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
+        
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         inject = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits inject.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+        
+         wrapped.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
@@ -105,356 +362,66 @@ See the legal/LICENSE file for license information and legal/AUTHORS for authors
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
-         'Category: shared\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         mixins = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow mixins.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         composableCore = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow mixins composableCore.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         flush = ( |
-            | 
-            [|:exit| write: (in readIfFail: exit) IfFail: exit] loopExit. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         in = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         in: s = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         out = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         out: s = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         pull = ( |
-            | pullIfFail: [^self]. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         pullIfFail: blk = ( |
-            | write: (in readIfFail: [|:e| ^ blk value: e]) IfFail: [|:e| ^ blk value: e]. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         pullUpTo: n = ( |
-            | n do: [pullIfFail: [^ self]]. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> () From: ( | {
-         'Category: composing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         |= s = ( |
-            | 
-            out: s. s in: self. s).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readableCore = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'readableCore' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow mixins readableCore.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'readableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readIfFail: blk = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         writableCore = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'writableCore' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow mixins writableCore.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'writableCore' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         write: obj IfFail: blk = ( |
-            | 
-            childResponsibility).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         pipeable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
-         'Category: structural\x7fComment: Neither writes nor 
-reads will succeed\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         blocking = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable blocking.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         core = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable core.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readIfFail: blk = ( |
-            | 
-            blk value: 'ATEND').
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         write: obj IfFail: blk = ( |
-            | 
-            blk value: 'ATEND').
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
          'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         filter = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable filter.
+         map = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'map' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow map.
 '.
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          block.
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copy)'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'map' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         buffer <- list copy.
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'map' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         filter = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable filter.
+         map = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits map.
 '.
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
-         'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         gather = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable gather.
-'.
-            | ) .
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         block.
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copy)'
-        
-         buffer <- list copy.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         gather = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable gather.
-'.
-            | ) .
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'gather' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
-         'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         map = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'map' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable map.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'map' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         block.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'map' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'map' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         map = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable map.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'map' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
-         'Category: structural\x7fComment: /dev/null :)
-I emit nils and 
-eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         nil = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable nil.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          readIfFail: blk = ( |
@@ -462,7 +429,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             nil).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'nil' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
@@ -470,199 +437,52 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
          'Category: generic\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         reduce = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow pipeable reduce.
+         reduce = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow reduce.
 '.
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
         
          block.
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
+         in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
+         out <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         reduce = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable reduce.
+         reduce = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits reduce.
 '.
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
         
          reduction.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow readable.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow readable collection.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         string = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'string' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits readable string.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'string' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (0)'
-        
-         position <- 0.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copyRemoveAll)'
-        
-         source <- list copyRemoveAll.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'file' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow readable file.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (os_file deadCopy)'
-        
-         file <- os_file deadCopy.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'file' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits readable file.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'file' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         string = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow readable string.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'collection' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits readable collection.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'collection' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (0)'
-        
-         position <- 0.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'\')'
-        
-         source <- ''.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
@@ -679,12 +499,10 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          block = ( |
              block.
-             source.
              w.
             | 
-            block: flow pipeable blocking copy.
-            source: 'Hello' reading.
-            w: source |= block |= list copy writing.
+            block: flow blocking  copy.
+            w: 'Hello' |= block |= list copy writing.
             [w flush contents size = 0] assert. self).
         } | ) 
 
@@ -696,11 +514,11 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             | 
 
             myPipeline: 
-                  'This is a bit of text for us to play with' reading 
-               |= (flow pipeable map copyOn: [|:c| c capitalize])
-               |= (flow pipeable filter copyOn: [|:c| c isVowel])
-               |= (flow pipeable gather copyOn: [|:c| (c & c) asList])
-               |= flow writable string copy.
+                  'This is a bit of text for us to play with'  
+               |= (flow map copyOn: [|:c| c capitalize])
+               |= (flow filter copyOn: [|:c| c isVowel])
+               |= (flow gather copyOn: [|:c| (c & c) asList])
+               |= '' writing.
 
             myPipeline flush.
             [myPipeline contents = 'IIIIAAIIOOEEOOUUOOAAII'] assert.
@@ -713,7 +531,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          copyString = ( |
              w.
             | 
-            w: 'hello' reading |= flow writable string copy.
+            w: 'hello' |= '' writing.
             [w flush contents = 'hello'] assert. self).
         } | ) 
 
@@ -723,10 +541,18 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          filterString = ( |
              w.
             | 
-            w: 'hello' reading 
-              |= (flow pipeable filter copyOn: [|:c| 'l' = c])
-              |= flow writable string copy.
+            w: 'hello' 
+              |= (flow filter copyOn: [|:c| 'l' = c])
+              |= '' writing.
             [w flush contents = 'll'] assert. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         injectObject = ( |
+            | 
+            [(2 |= flow extract single copy) flush contents = 2] assert. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
@@ -735,9 +561,9 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          mapString = ( |
              w.
             | 
-            w: 'hello' reading 
-              |= (flow pipeable map copyOn: [|:c| c capitalize])
-              |= flow writable string copy.
+            w: 'hello' 
+              |= (flow map copyOn: [|:c| c capitalize])
+              |= '' writing.
             [w flush contents = 'HELLO'] assert. self).
         } | ) 
 
@@ -749,8 +575,8 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
              source.
              w.
             | 
-            n: flow pipeable nil copy.
-            source: 'Hello' reading.
+            n: flow nil copy.
+            source: 'Hello'.
             w: source |= n |= list copy writing.
             [w pull contents first isNil] assert. self).
         } | ) 
@@ -769,7 +595,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
              s.
             | 
             f: os_file openForReading: '/etc/nanorc'.
-            s: f reading|= '' writing.
+            s: f |= '' writing.
             s flush.
             f close.
             [s contents = 'set nowrap\n'] assert. self).
@@ -783,10 +609,10 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
              sum.
              w.
             | 
-            sum: flow pipeable reduce copyOn: [|:e. :s| s + e].
-            source: (1 & 2 & 3 & 4) asVector reading.
-            w: source |= sum |= list copy writing.
-            [w flush contents first = 10] assert. self).
+            sum: flow reduce copyOn: [|:e. :s| s + e].
+            source: (1 & 2 & 3 & 4) asVector.
+            w: source |= sum |= flow extract single copy.
+            [w flush contents = 10] assert. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
@@ -796,7 +622,15 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             | 
             copyString filterString mapString
             sum block nil readFile writeFile
-            combination).
+            combination testConcat).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         testConcat = ( |
+            | 
+            [('<' |= 'h1' |= '>' |= '' writing) flush contents = '<h1>'] assert. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
@@ -808,7 +642,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
              s.
             | 
             o: os_file openForWriting: '/tmp/selftest'.
-            s: 'Hello, World!' reading |= o writing.
+            s: 'Hello, World!' |= o writing.
             s flush.
             o close.
             o: os_file openForReading: '/tmp/selftest'.
@@ -826,40 +660,314 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         pipeable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable.
-'.
-            | ) .
+         flush = ( |
+            | 
+            [|:exit| write: (in readIfFail: exit) IfFail: exit] loopExit. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         composable* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         readable* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'readableCore' -> ().
+         pull = ( |
+            | pullIfFail: [^self]. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         writable* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'writableCore' -> ().
+         pullIfFail: blk = ( |
+            | write: (in readIfFail: [|:e| ^ blk value: e]) IfFail: [|:e| ^ blk value: e]. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         pullUpTo: n = ( |
+            | n do: [pullIfFail: [^ self]]. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            childResponsibility).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         wrapFlow = ( |
+            | self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | 
+            childResponsibility).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: composing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         |= s = ( |
+             f.
+            | f: s wrapFlow. out: f. f in: self. f).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         adaptors = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract adaptors.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract adaptors collection.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copyRemoveAll)'
+        
+         collection <- list copyRemoveAll.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         contents = ( |
+            | collection).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: o = ( |
+            | copy collection: o).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | 
+            collection add: obj. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract adaptors file.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         contents = ( |
+            | file).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: f = ( |
+            | copy file: f).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (os_file deadCopy)'
+        
+         file <- os_file deadCopy.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | file write: obj IfFail: [|:e| ^ blk value: e]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         single = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract adaptors single.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         contents = ( |
+            | object).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copy = ( |
+            | 
+            resend.copy object: nil).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+        
+         object.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'single' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | object: obj).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         string = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits extract adaptors string.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         contents = ( |
+            | string).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: s = ( |
+            | copy string: s).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'\')'
+        
+         string <- ''.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> 'adaptors' -> 'string' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: char IfFail: blk = ( |
+            | string: string, char).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         contents = ( |
+            | wrapped contents).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnCollection: c = ( |
+            | copy wrapped: adaptors collection copyOn: c).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnFile: f = ( |
+            | copy wrapped: adaptors file copyOn: f).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnString: s = ( |
+            | copy wrapped: adaptors string copyOn: s).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+             i.
+            | 
+            i: in readIfFail: [|:e| ^ blk value: e].
+            wrapped write: i IfFail: [|:e| ^ blk value: e].
+            i).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         single = ( |
+            | copy wrapped: adaptors single copy).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | 
+            out write: obj IfFail: [|:e| ^ blk value: e].
+            wrapped write: obj IfFail: [|:e| ^ blk value: e].
+            self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          copyOn: blk = ( |
@@ -867,7 +975,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             (copy block: blk) buffer: list copyRemoveAll).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          filter: o = ( |
@@ -875,13 +983,13 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             block value: o).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          readIfFail: blk = ( |
@@ -891,14 +999,14 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             (filter: o) ifTrue: o False: [readIfFail: blk]).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'filter' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'filter' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
             | (filter: obj) ifTrue: [out write: obj IfFail: [|:e| ^ blk value: e]]. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          copyOn: blk = ( |
@@ -906,20 +1014,20 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             (copy block: blk) buffer: list copyRemoveAll).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          gather: o = ( |
             | block value: o).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          readIfFail: blk = ( |
@@ -931,7 +1039,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
                False: [buffer removeFirst]).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'gather' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'gather' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
@@ -939,7 +1047,185 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             (gather: obj) do: [|:e| out write: e IfFail: [|:e| ^ blk value: e]]. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         adaptors = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits inject adaptors.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits inject adaptors collection.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copyRemoveAll)'
+        
+         collection <- list copyRemoveAll.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: o = ( |
+            | copy collection: o).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (0)'
+        
+         index <- 0.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'collection' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            index >= collection size
+             ifTrue: [^ blk value: 'ATEND']
+              False: [|e| e: collection at: index.
+                          index: index + 1.
+                          e]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'file' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits inject adaptors file.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: f = ( |
+            | copy file: f).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (os_file deadCopy)'
+        
+         file <- os_file deadCopy.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'file' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            file readMin: 1 Max: 1 IfFail: [|:e| ^ blk value: e]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         object = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits inject adaptors object.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOn: o = ( |
+            | copy object: o).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (nil)'
+        
+         object.
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readFlag <- bootstrap stub -> 'globals' -> 'false' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> 'adaptors' -> 'object' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            readFlag ifTrue: [^ blk value: 'ATEND']
+             False: [readFlag: true. object]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnCollection: c = ( |
+            | copy wrapped: adaptors collection copyOn: c).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnFile: f = ( |
+            | copy wrapped: adaptors file copyOn: f).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'Category: copying\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copyOnObject: o = ( |
+            | copy wrapped: adaptors object copyOn: o).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         readIfFail: blk = ( |
+            | 
+            in readIfFail: [
+              wrapped readIfFail: [|:e| ^ blk value: e]]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'inject' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         write: obj IfFail: blk = ( |
+            | 
+            out write: obj IfFail: blk).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          copyOn: blk = ( |
@@ -947,62 +1233,71 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             copy block: blk).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          map: o = ( |
             | block value: o).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          readIfFail: blk = ( |
             | map: in readIfFail: [^ blk value: 'ATEND']).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'map' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'map' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
             | out write: map: obj IfFail: [|:e| ^ blk value: e]. self).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         pipeable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits pipeable.
+'.
+            | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          copyOn: blk = ( |
             | copy block: blk).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         finishValue = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> 'finishValue' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits pipeable reduce finishValue.
+         finishValue = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> 'finishValue' -> () From: ( |
+             {} = 'ModuleInfo: Creator: globals flow traits reduce finishValue.
 '.
             | ) .
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> 'finishValue' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> 'finishValue' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          parent* = bootstrap stub -> 'traits' -> 'oddball' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'core' -> ().
+         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> ().
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          readIfFail: blk = ( |
@@ -1013,7 +1308,7 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             [reduction] onReturn: [reduction: finishValue]).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          reduce: o = ( |
@@ -1024,369 +1319,11 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
                                          With: reduction]).
         } | ) 
 
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'pipeable' -> 'reduce' -> () From: ( | {
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'reduce' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
             | reduce: obj. in atEnd ifTrue: [out write: reduction IfFail: [|:e| ^ blk value: e]]. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits readable.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: aString = ( |
-            | 
-            (copy source: aString) position: 0).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         core = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits readable core.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readIfFail: blk = ( |
-             o.
-            | 
-            position >= source size ifTrue: [^ blk value: 'ATEND'].
-            o: source at: position. position: position + 1. o).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         composableCore* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readableCore* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'readableCore' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: aFile = ( |
-            | copy file: aFile).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readIfFail: blk = ( |
-            | 
-            file readCount: 1 IfFail: [|:e| ^ blk value: e]).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: col = ( |
-            | (copy source: col) position: 0).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'readable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         readIfFail: blk = ( |
-             o.
-            | 
-            position >= source size ifTrue: [^ blk value: 'ATEND'].
-            o: source at: position. position: position + 1. o).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         writable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits writable.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits writable collection.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         contents = ( |
-            | destination).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copy = ( |
-            | 
-            resend.copy destination: destination copyRemoveAll).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: c = ( |
-            | copy destination: c).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         core = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits writable core.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         write: obj IfFail: blk = ( |
-            | destination add: obj. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> () From: ( | {
-         'Category: mixins\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         composableCore* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'composableCore' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'traits' -> 'clonable' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> () From: ( | {
-         'Category: mixins\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         writeableCore* = bootstrap stub -> 'globals' -> 'flow' -> 'mixins' -> 'writableCore' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'file' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits writable file.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: aFile = ( |
-            | copy file: aFile).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         write: char IfFail: blk = ( |
-            | 
-            file write: char IfFail: [|:e| ^ blk value: e]. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         string = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow traits writable string.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         contents = ( |
-            | destination).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         copyOn: c = ( |
-            | copy destination: c).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'core' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         write: char IfFail: blk = ( |
-            | destination: destination, char. self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         writable = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow writable.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         collection = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'collection' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow writable collection.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (list copyRemoveAll)'
-        
-         destination <- list copyRemoveAll.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'collection' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'collection' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         file = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'file' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow writable file.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (os_file deadCopy)'
-        
-         file <- os_file deadCopy.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'file' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'file' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         string = bootstrap setObjectAnnotationOf: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'string' -> () From: ( |
-             {} = 'ModuleInfo: Creator: globals flow writable string.
-'.
-            | ) .
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         destination <- ''.
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         in <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow pipeable blocking)'
-        
-         out <- bootstrap stub -> 'globals' -> 'flow' -> 'pipeable' -> 'blocking' -> ().
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'writable' -> 'string' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         parent* = bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'writable' -> 'string' -> ().
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> () From: ( | {
@@ -1437,9 +1374,9 @@ SlotsToOmit: directory fileInTimeString myComment postFileIn revision subpartNam
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'flow' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'0.0.1\')\x7fVisibility: public'
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'0.0.2\')\x7fVisibility: public'
         
-         revision <- '0.0.1'.
+         revision <- '0.0.2'.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'flow' -> () From: ( | {
@@ -1457,36 +1394,30 @@ SlotsToOmit: directory fileInTimeString myComment postFileIn revision subpartNam
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'abstractFile' -> () From: ( | {
          'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         reading = ( |
-            | flow readable file copyOn: self).
+         wrapFlow = ( |
+            | flow inject copyOnFile: self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'abstractFile' -> () From: ( | {
          'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          writing = ( |
-            | flow writable file copyOn: self).
+            | 
+            flow extract copyOnFile: self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'collection' -> () From: ( | {
          'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
-         reading = ( |
-            | flow readable collection copyOn: self).
+         wrapFlow = ( |
+            | flow inject copyOnCollection: self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'collection' -> () From: ( | {
          'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          writing = ( |
-            | flow writable collection copyOn: self).
-        } | ) 
-
- bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'string' -> () From: ( | {
-         'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
-        
-         reading = ( |
-            | flow readable string copyOn: self).
+            | flow extract copyOnCollection: self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'traits' -> 'string' -> () From: ( | {
@@ -1494,7 +1425,7 @@ SlotsToOmit: directory fileInTimeString myComment postFileIn revision subpartNam
         
          writing = ( |
             | 
-            flow writable string copyOn: self).
+            flow extract copyOnString: self).
         } | ) 
 
 
