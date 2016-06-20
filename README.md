@@ -1,7 +1,7 @@
 # Flow
 An experiment with streams and filters in Self.
 
-This is version 0.0.2 of 20 June 2016.
+This is version 0.0.3 of 21 June 2016.
 
 Flow streams are entities which understand either readIfFail: or write:IfFail:. They are composable, which means you can link them in a chain with pipeable connectors. 
 
