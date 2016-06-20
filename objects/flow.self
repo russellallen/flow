@@ -1,4 +1,4 @@
- '0.0.2'
+ '0.0.3'
  '
 Copyright 1992-2014 AUTHORS.
 See the legal/LICENSE file for license information and legal/AUTHORS for authors.
@@ -22,6 +22,13 @@ See the legal/LICENSE file for license information and legal/AUTHORS for authors
             | wrapFlow |= f).
         } | ) 
 
+ bootstrap addSlotsTo: bootstrap stub -> 'defaultBehavior' -> () From: ( | {
+         'Category: flow\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         |> f = ( |
+            | (|= f) flush).
+        } | ) 
+
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> () From: ( | {
          'Category: libraries\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
@@ -39,6 +46,25 @@ reads will succeed\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
              {} = 'ModuleInfo: Creator: globals flow blocking.
 '.
             | ) .
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'Comment: We loop on ourselves by
+default otherwise where 
+would the turtle stack end?\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copy = ( |
+             n.
+            | n: clone. n in: n. n out: n. n).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'Comment: Search for head 
+can\'t go past here\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         heads = ( |
+            | 
+            list copy add: out).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
@@ -74,6 +100,14 @@ reads will succeed\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          readIfFail: blk = ( |
             | 
             blk value: 'ATEND').
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
+         'Comment: Search for tail -
+can\'t go past here.\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         tails = ( |
+            | list copy add: in).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> () From: ( | {
@@ -404,6 +438,15 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
+         'Comment: Search for head 
+can\'t go past here\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         heads = ( |
+            | 
+            list copy add: out).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
          'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (flow blocking )'
         
          in <- bootstrap stub -> 'globals' -> 'flow' -> 'blocking' -> ().
@@ -427,6 +470,14 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          readIfFail: blk = ( |
             | 
             nil).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
+         'Comment: Search for tail -
+can\'t go past here.\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         tails = ( |
+            | list copy add: in).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'nil' -> () From: ( | {
@@ -622,7 +673,8 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
             | 
             copyString filterString mapString
             sum block nil readFile writeFile
-            combination testConcat).
+            combination testConcat testInsertFlush
+            testHeadTail).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
@@ -631,6 +683,41 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          testConcat = ( |
             | 
             [('<' |= 'h1' |= '>' |= '' writing) flush contents = '<h1>'] assert. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         testHeadTail = ( |
+             h.
+             t.
+            | 
+            h: flow map copyOn: [|:c| c capitalize].
+            t:   h
+              |= (flow filter copyOn: [|:c| c isVowel not])
+              |= '' writing.
+            [t head = h] assert.
+            [h tail = t] assert.
+            self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         testInsertFlush = ( |
+             in.
+             out.
+            | 
+             halt.
+            out: 
+                 (flow map copyOn: [|:c| c capitalize])
+              |= (flow filter copyOn: [|:c| c isVowel not])
+              |= '' writing.
+            in: out head.
+            in <| 'Hello '.
+            'World!' |> in. 
+            [out contents = 'HLL WRLD!'] assert.
+            self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'tests' -> () From: ( | {
@@ -661,11 +748,54 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: composing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         <| f = ( |
+            | (f wrapFlow |= self) flush).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copy = ( |
+             n.
+            | 
+            n: resend.copy. 
+                 flow blocking copy 
+              |= n
+              |= flow blocking copy.
+            n).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
          'Category: moving through pipeline\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          flush = ( |
             | 
             [|:exit| write: (in readIfFail: exit) IfFail: exit] loopExit. self).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         head = ( |
+            | 
+            headIfAmbigous: [error: 'Ambigous Flow Heads']).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         headIfAmbigous: blk = ( |
+             h.
+            | h: heads. h size = 1 ifTrue: [h first] False: [^ blk value: h]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         heads = ( |
+            | list copy addAll: in heads).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
@@ -704,7 +834,31 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: FollowSlot'
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         tail = ( |
+            | 
+            tailIfAmbigous: [error: 'Ambigous Flow Tails']).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         tailIfAmbigous: blk = ( |
+             t.
+            | t: tails. t size = 1 ifTrue: [t first] False: [^ blk value: t]).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: traversing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         tails = ( |
+            | 
+            list copy addAll: out tails).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'core' -> () From: ( | {
+         'Category: composing\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          wrapFlow = ( |
             | self).
@@ -910,6 +1064,15 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
         
          contents = ( |
             | wrapped contents).
+        } | ) 
+
+ bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
+         'Comment: We need to be able to write downstream
+without being blocked.\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
+        
+         copy = ( |
+             n.
+            | n: resend.copy. n |= flow nil copy. n).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> 'extract' -> () From: ( | {
@@ -1257,7 +1420,8 @@ eat writes\x7fModuleInfo: Module: flow InitialContents: FollowSlot'
          'ModuleInfo: Module: flow InitialContents: FollowSlot'
         
          write: obj IfFail: blk = ( |
-            | out write: map: obj IfFail: [|:e| ^ blk value: e]. self).
+            | 
+            out write: (map: obj) IfFail: [|:e| ^ blk value: e]. self).
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'flow' -> 'traits' -> () From: ( | {
@@ -1374,9 +1538,9 @@ SlotsToOmit: directory fileInTimeString myComment postFileIn revision subpartNam
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'flow' -> () From: ( | {
-         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'0.0.2\')\x7fVisibility: public'
+         'ModuleInfo: Module: flow InitialContents: InitializeToExpression: (\'0.0.3\')\x7fVisibility: public'
         
-         revision <- '0.0.2'.
+         revision <- '0.0.3'.
         } | ) 
 
  bootstrap addSlotsTo: bootstrap stub -> 'globals' -> 'modules' -> 'flow' -> () From: ( | {
